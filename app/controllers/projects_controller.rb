@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.destroy(params[:id])
   end
 
   def update
