@@ -1,4 +1,4 @@
-<%= form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @list, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -11,13 +11,10 @@
       <%= f.text_area :description, :class => 'text_area' %>
     </div>
   </div>
-  <div class="control-group">
-      <%= f.radio_button :status, "Public" %>Make this project Public.
-      <%= f.radio_button :status, "Private" %>Make this project Private.
-  </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                projects_path, :class => 'btn' %>
+                list_path, :class => 'btn' %>
   </div>
 <% end %>

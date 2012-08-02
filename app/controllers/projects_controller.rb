@@ -4,8 +4,9 @@ class ProjectsController < ApplicationController
   end
 
   def index
-     @user = current_user
-    @projects = Project.all
+    @user = current_user
+    @projects = Project.find_all_by_status("Public")
+    @priv_projects =Project.find_all_by_user_id(current_user.id)
   end
 
   def create

@@ -1,4 +1,18 @@
 Basecampclone::Application.routes.draw do
+  get "lists/index"
+
+  get "lists/new"
+
+  get "lists/create"
+
+  get "lists/update"
+
+  get "lists/edit"
+
+  get "lists/destroy"
+
+  get "lists/show"
+
   devise_for :users
 
   resources :projects
