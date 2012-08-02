@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   # before_create :current_user?
 
   belongs_to :user
+  has_many :list
+
   accepts_nested_attributes_for :user
 
   # def current_user?
