@@ -1,13 +1,14 @@
 Basecampclone::Application.routes.draw do
+
   devise_for :users
 
   resources :projects do
-    resources :lists
+    resources :lists do
+      resources :todos
+    end
   end
 
   root :to => "projects#index"
-
-  get '/blah/something', :to => 'projects#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
